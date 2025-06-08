@@ -16,4 +16,9 @@ jobs:
       - run: pnpm lint:eslint
       - run: pnpm test:unit
       - run: pnpm run build
+
+      # 👉 **НОВЫЙ ШАГ** — ставим браузеры Playwright
+      - name: Install Playwright browsers
+        run: pnpm dlx playwright install --with-deps
+
       - run: pnpm test:e2e
